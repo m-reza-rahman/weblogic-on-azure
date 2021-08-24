@@ -17,14 +17,14 @@ public class Coffee implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private long id;
 	protected String name;
-	protected Double price;
+	protected double price;
 
 	public Coffee() {
 	}
 
-	public Coffee(String name, Double price) {
+	public Coffee(String name, double price) {
 		this.name = name;
 		this.price = price;
 	}
@@ -37,38 +37,52 @@ public class Coffee implements Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
 	@Override
 	public int hashCode() {
-		int hash = 0;
-		hash += (id != null ? id.hashCode() : 0);
-		return hash;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
 	}
 
 	@Override
-	public boolean equals(Object object) {
-		if (!(object instanceof Coffee)) {
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		}
-		Coffee other = (Coffee) object;
-		if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
+		Coffee other = (Coffee) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
+			return false;
 		return true;
 	}
 

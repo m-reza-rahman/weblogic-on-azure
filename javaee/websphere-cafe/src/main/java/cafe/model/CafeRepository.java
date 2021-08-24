@@ -29,13 +29,13 @@ public class CafeRepository {
 		return coffee;
 	}
 
-	public void removeCoffeeById(Long coffeeId) {
+	public void removeCoffeeById(long coffeeId) {
 		logger.log(Level.INFO, "Removing a coffee {0}.", coffeeId);
 		Coffee coffee = entityManager.find(Coffee.class, coffeeId);
 		this.entityManager.remove(coffee);
 	}
 
-	public Coffee findCoffeeById(Long coffeeId) {
+	public Coffee findCoffeeById(long coffeeId) {
 		logger.log(Level.INFO, "Finding the coffee with id {0}.", coffeeId);
 		return this.entityManager.find(Coffee.class, coffeeId);
 	}

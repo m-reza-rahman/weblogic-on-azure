@@ -35,7 +35,7 @@ public class Cafe implements Serializable {
 	@NotNull
 	protected String name;
 	@NotNull
-	protected Double price;
+	protected double price;
 	protected List<Coffee> coffeeList;
 
 	public String getName() {
@@ -46,11 +46,11 @@ public class Cafe implements Serializable {
 		this.name = name;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -87,7 +87,7 @@ public class Cafe implements Serializable {
 		Coffee coffee = new Coffee(this.name, this.price);
 		this.client.target(baseUri).request(MediaType.APPLICATION_XML).post(Entity.xml(coffee));
 		this.name = null;
-		this.price = null;
+		this.price = 0;
 		this.getAllCoffees();
 	}
 

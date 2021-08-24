@@ -21,8 +21,8 @@
 			<h3>
 				<h:outputText value="#{messages.ourMenu}" />
 			</h3>
-			<h:dataTable id="coffeeList" value="#{cafe.coffeeList}"
-				border="1" var="coffee" styleClass="table">
+			<h:dataTable id="coffeeList" value="#{cafe.coffeeList}" border="1"
+				var="coffee" styleClass="table">
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="#{messages.id}" />
@@ -39,7 +39,9 @@
 					<f:facet name="header">
 						<h:outputText value="#{messages.price}" />
 					</f:facet>
-					<h:outputText value="#{coffee.price}" />
+					<h:outputText value="#{coffee.price}">
+						<f:convertNumber currencySymbol="$" type="currency" />
+					</h:outputText>
 				</h:column>
 				<h:column>
 					<h:commandLink value="#{messages.delete}"

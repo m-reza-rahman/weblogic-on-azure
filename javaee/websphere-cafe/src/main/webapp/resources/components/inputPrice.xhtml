@@ -12,7 +12,7 @@
 <!-- IMPLEMENTATION -->
 <cc:implementation>
     <h:inputText id="getprice" value="#{cc.attrs.price}" styleClass="form-control">
-        <f:convertNumber pattern="#0.00"/>
+        <f:convertNumber currencySymbol="$" type="currency"/>
     </h:inputText>
     <p/>
     <h:message for="getprice" style="color:red"/>
