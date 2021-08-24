@@ -68,7 +68,7 @@ public class Cafe implements Serializable {
 			baseUri = FacesContext.getCurrentInstance().getExternalContext().getRequestScheme() + "://"
 					+ inetAddress.getHostName() + ":"
 					+ FacesContext.getCurrentInstance().getExternalContext().getRequestServerPort()
-					+ "/weblogic-cafe/rest/coffees";
+					+ "/websphere-cafe/rest/coffees";
 			this.client = ClientBuilder.newClient();
 			this.getAllCoffees();
 		} catch (IllegalArgumentException | NullPointerException | WebApplicationException | UnknownHostException ex) {

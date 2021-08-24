@@ -33,7 +33,7 @@ public class CafeResource {
 
 	@Inject
 	private CafeRepository cafeRepository;
-	
+
 	@GET
 	@Produces({ MediaType.APPLICATION_XML })
 	public List<Coffee> getAllCoffees() {
