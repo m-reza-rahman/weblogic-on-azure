@@ -7,6 +7,8 @@ We use Eclipse but you can use any Maven and WebLogic capable IDE. We use Postgr
 
 * JDK 11
 * Latest Eclipse
+* IBM Installation Manager
+* Repository: http://www.ibm.com/software/repositorymanager/com.ibm.websphere.BASE.v90
 * WebSphere 9.
 * Install the latest version of Oracle JDK 8 (we used [8u271](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)).
 * Install [the 2020-06 release of Eclipse for Enterprise Java Developers](https://www.eclipse.org/downloads/packages/release/2020-06/r/eclipse-ide-enterprise-java-developers) (this is the latest Eclipse IDE version that supports Java SE 8).
