@@ -7,6 +7,7 @@ We use Eclipse but you can use any Maven and WebLogic capable IDE. We use Postgr
 
 * JDK 11
 * Latest Eclipse
+* Marketplace -> "websphere" -> IBM WebSphere Application Server V9.x Developer Tools
 * IBM Installation Manager
 * Repository: http://www.ibm.com/software/repositorymanager/com.ibm.websphere.BASE.v90
 * WebSphere 9.
