@@ -1,7 +1,7 @@
 # Basic Java EE CRUD Application
-This is a basic Java EE 7 application used throughout the WebLogic on Azure demos. It is a simple CRUD application. It uses Maven and Java EE 7 (JAX-RS, EJB, CDI, JPA, JSF, Bean Validation).
+This is a basic Java EE 7 application used throughout the WebSphere on Azure demos. It is a simple CRUD application. It uses Maven and Java EE 7 (JAX-RS, EJB, CDI, JPA, JSF, Bean Validation).
 
-We use Eclipse but you can use any Maven and WebLogic capable IDE. We use PostgreSQL but you can use any relational database such as Oracle or SQL Server.
+We use Eclipse but you can use any Maven and WebSphere capable IDE. We use PostgreSQL but you can use any relational database such as Db2, SQL Server or MySQL.
 
 ## Setup
 
@@ -22,8 +22,8 @@ We will be using the fully managed PostgreSQL offering in Azure for this demo. B
 * Go to the [Azure portal](http://portal.azure.com).
 * The steps in this section use `<your suffix>`. The suffix could be your first name such as "reza".  It should be short and reasonably unique.
 * Select 'Create a resource'. In the search box, enter and select 'Azure Database for PostgreSQL'. Hit create. Select a single server.
-* In "Resource group" select "Create new" and enter weblogic-cafe-db-group-`<your suffix>`
-* Specify the Server name to be weblogic-cafe-db-`<your suffix>`.
+* In "Resource group" select "Create new" and enter websphere-cafe-db-group-`<your suffix>`.
+* Specify the Server name to be websphere-cafe-db-`<your suffix>`.
 * Specify the location to be a location close to you.
 * Leave the Version at its default.
 * In Compute + Storage click "Configure Server" then choose Basic.
@@ -34,11 +34,11 @@ We will be using the fully managed PostgreSQL offering in Azure for this demo. B
 * Specify the Password to be Secret123! (do not forget the exclamation point). 
 * Hit 'Review+create', then 'Create'. It will take a moment for the database to deploy and be ready for use.
 * In the portal, go to 'All resources'. Enter `<your suffix>` into the filter box and press enter.
-* Find and click on weblogic-cafe-db-`<your suffix>`. 
+* Find and click on websphere-cafe-db-`<your suffix>`. 
 * Under Settings, open the connection security panel.
    * Toggle "Allow access to Azure services" to "Yes".
    * Toggle "Enforce SSL connection" to "DISABLED". 
-   * Hit Add client IP. This allows connection to the database from the IP you are currently using to access Azure.  As a precaution, verify the IP entered is actually your IP.  You can do this by googling "what is my ip".  Hit Save.
+   * Hit Add client IP. This allows connection to the database from the IP you are currently using to access Azure.  As a precaution, verify the IP entered is actually your IP.  You can do this by googling "what is my ip".  Click Save.
 
 ## Setting Up WebLogic
 The next step is to get the application up and running. Follow the steps below to do so.
