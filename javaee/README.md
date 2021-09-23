@@ -66,7 +66,7 @@ The next step is to get the application up and running. Follow the steps below t
    * Accept the defaults and click next until you click Finish.
    * Click 'Save' to sync with the master configuration. 
    * Go to Resources -> JDBC -> Data sources. Click 'WebSphereCafeDB'. Click on 'Custom properties'.
-   * Change the URL to be:
+   * Change the URL property to be:
    ```
    jdbc:postgresql://websphere-cafe-db-`<your suffix>`.postgres.database.azure.com:5432/postgres?user=postgres@websphere-cafe-db-`<your suffix>`&password=Secret123!
    ```
