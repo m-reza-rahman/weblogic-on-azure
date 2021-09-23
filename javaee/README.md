@@ -74,9 +74,9 @@ The next step is to get the application up and running. Follow the steps below t
    * Go to Resources -> JDBC -> Data sources. Click 'WebSphereCafeDB'. Click on 'Test connection'.
    * Make sure the test succeeds. If it does not, put these instructions aside, troubleshoot and resolve the issue.  Once the connection successfully tests, you may continue. You will see a warning about the GenericDataStoreHelper being used. You can safely ignore this warning.
 
-## Open weblogic-cafe in the IDE
-* Get the weblogic-cafe application into the IDE. In order to do that, go to File -> Import -> Maven -> Existing Maven Projects.  Click Next
-* Then browse to where you have this repository code in your file system and select javaee/weblogic-cafe and click "Open".  
+## Open websphere-cafe in the IDE
+* Get the websphere-cafe application into the IDE. In order to do that, go to File -> Import -> Maven -> Existing Maven Projects.  Click Next
+* Then browse to where you have this repository code in your file system and select javaee/websphere-cafe and click "Open".  
 * Accept the rest of the defaults and click "finish".
 * Once the application loads, you should do a full Maven build by going to the application and secondary clicking -> Run As -> Maven install.
    * You must see `BUILD SUCCESS` in the Eclipse console in order to proceed.  If you do not, troubleshoot the build problem and resolve it.  Once the application has successfully built, you may continue.
@@ -84,94 +84,25 @@ The next step is to get the application up and running. Follow the steps below t
 ## Deploying the Application
 
 * It is now time to run the application. Secondary click the application -> Run As -> Run on Server.
-   * Select the local WebLogic instance.
+   * Select the local WebSphere instance.
    * Make sure to select "Always use this server when running this project" and click "Finish". Just accept the defaults and wait for the application to finish deploying.
-* Once the application runs, Eclise will open it up in a browser. The application is available at http://localhost:7001/weblogic-cafe.
+* Once the application runs, Eclise will open it up in a browser. The application is available at http://localhost:7001/websphere-cafe.
 
 ## Exploring the Application
 
 The application is composed of:
 
-- **A RESTFul service*:** protocol://hostname:port/weblogic-cafe/rest/coffees
+- **A RESTFul service*:** protocol://hostname:port/websphere-cafe/rest/coffees
 
-	- **_GET by Id_**: protocol://hostname:port/weblogic-cafe/rest/coffees/{id} 
-	- **_GET all_**: protocol://hostname:port/weblogic-cafe/rest/coffees
-	- **_POST_** to add a new element at: protocol://hostname:port/weblogic-cafe/rest/coffees
-	- **_DELETE_** to delete an element at: protocol://hostname:port/weblogic-cafe/rest/coffees/{id}
+	- **_GET by Id_**: protocol://hostname:port/websphere-cafe/rest/coffees/{id} 
+	- **_GET all_**: protocol://hostname:port/websphere-cafe/rest/coffees
+	- **_POST_** to add a new element at: protocol://hostname:port/websphere-cafe/rest/coffees
+	- **_DELETE_** to delete an element at: protocol://hostname:port/websphere-cafe/rest/coffees/{id}
 	
-- **A JSF Client:** protocol://hostname:port/weblogic-cafe/index.xhtml
+- **A JSF Client:** protocol://hostname:port/websphere-cafe/index.xhtml
 
 Feel free to take a minute to explore the application.
-    
-Some sample interactions:
-
-```
-curl --verbose http://localhost:7001/weblogic-cafe/rest/coffees
-*   Trying ::1...
-* TCP_NODELAY set
-* Connected to localhost (::1) port 7001 (#0)
-> GET /weblogic-cafe/rest/coffees HTTP/1.1
-> Host: localhost:7001
-> User-Agent: curl/7.64.1
-> Accept: */*
->
-< HTTP/1.1 200 OK
-< Date: Fri, 10 Jan 2020 22:12:26 GMT
-< Content-Length: 201
-< Content-Type: application/xml
-< X-ORACLE-DMS-ECID: 89fd1d3f-df20-4336-9f81-f1edc0ccab49-00000027
-< X-ORACLE-DMS-RID: 0
-<
-* Connection #0 to host localhost left intact
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><coffees><coffee><id>1</id><name>Strong</name><price>5.0</price></coffee><coffee><id>2</id><name>Weak</name><price>0.25</price></coffee></coffees>* Closing connection 0
-
-curl --verbose http://localhost:7001/weblogic-cafe/rest/coffees/1
-*   Trying ::1...
-* TCP_NODELAY set
-* Connected to localhost (::1) port 7001 (#0)
-> GET /weblogic-cafe/rest/coffees/1 HTTP/1.1
-> Host: localhost:7001
-> User-Agent: curl/7.64.1
-> Accept: */*
->
-< HTTP/1.1 200 OK
-< Date: Fri, 10 Jan 2020 22:13:51 GMT
-< Content-Length: 102
-< Content-Type: application/xml
-< X-ORACLE-DMS-ECID: 89fd1d3f-df20-4336-9f81-f1edc0ccab49-00000028
-< X-ORACLE-DMS-RID: 0
-<
-* Connection #0 to host localhost left intact
-<?xml version="1.0" encoding="UTF-8"?><coffee><id>1</id><name>Strong</name><price>5.0</price></coffee>* Closing connection 0
-
-cat medium.xml
-<?xml version="1.0" encoding="UTF-8"?>
-<coffee><id>200</id><name>Medium</name><price>5.0</price></coffee>
-
-curl --verbose -X POST -d @medium.xml http://localhost:7001/weblogic-cafe/rest/coffees --header "Content-Type: application/xml"
-Note: Unnecessary use of -X or --request, POST is already inferred.
-*   Trying ::1...
-* TCP_NODELAY set
-* Connected to localhost (::1) port 7001 (#0)
-> POST /weblogic-cafe/rest/coffees HTTP/1.1
-> Host: localhost:7001
-> User-Agent: curl/7.64.1
-> Accept: */*
-> Content-Type: application/xml
-> Content-Length: 104
->
-* upload completely sent off: 104 out of 104 bytes
-< HTTP/1.1 201 Created
-< Date: Fri, 10 Jan 2020 22:17:55 GMT
-< Location: http://localhost:7001/weblogic-cafe/rest/coffees/200
-< Content-Length: 0
-< X-ORACLE-DMS-ECID: 89fd1d3f-df20-4336-9f81-f1edc0ccab49-00000029
-< X-ORACLE-DMS-RID: 0
-<
-* Connection #0 to host localhost left intact
-* Closing connection 0
-```
 
 ## Cleaning Up
 
-Once you are done exploring all aspects of the demo, you should delete the weblogic-cafe-db-group-`<your suffix>` resource group. You can do this by going to the portal, going to resource groups, finding and clicking on weblogic-cafe-db-group-`<your suffix>` and hitting delete. This is especially important if you are not using a free subscription! If you do keep these resources around (for example to begin your own prototype), you should in the least use your own passwords and make the corresponding changes in the demo code.
+Once you are done exploring all aspects of the demo, you should delete the websphere-cafe-db-group-`<your suffix>` resource group. You can do this by going to the portal, going to resource groups, finding and clicking on websphere-cafe-db-group-`<your suffix>` and clicking delete. This is especially important if you are not using a free subscription! If you do keep these resources around (for example to begin your own prototype), you should in the least use your own passwords and make the corresponding changes in the demo code.
