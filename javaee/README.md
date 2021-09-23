@@ -71,17 +71,8 @@ The next step is to get the application up and running. Follow the steps below t
    jdbc:postgresql://websphere-cafe-db-`<your suffix>`.postgres.database.azure.com:5432/postgres?user=postgres@websphere-cafe-db-`<your suffix>`&password=Secret123!
    ```
    * Click 'Save' to sync with the master configuration.
-   * Enter the database name to be 'postgres'. 
-   * Enter the host name as 'weblogic-cafe-db-.postgres.database.azure.com'.
-   * Leave the port unchanged.
-   * Enter the user name as 'postgres@weblogic-cafe-db-`<your suffix>`'. 
-   * Enter the password as 'Secret123!'. Click next. 
-   * On the next screen, accept the defaults and click next.
-   * On the "Select Targets" screen, select AdminServer and click Finish.
-   * Test the connection.   
-      * In the "Data Sources" pane, click "WebLogicCafeDB".
-      * Click Monitoring -> Testing
-      * Select AdminServer and click "Test Data Source".  You must see "Test of WebLogicCafeDB on server AdminServer was successful." at the top of this pane after clicking the button.  If you do not, put this workshop aside, troubleshoot and resolve the issue.  Once the connection successfully tests, you may continue.
+   * Go to Resources -> JDBC -> Data sources. Click 'WebSphereCafeDB'. Click on 'Test connection'.
+   * Make sure the test succeeds. If it does not, put these instructions aside, troubleshoot and resolve the issue.  Once the connection successfully tests, you may continue. You will see a warning about the GenericDataStoreHelper being used. You can safely ignore this warning.
 
 ## Open weblogic-cafe in the IDE
 * Get the weblogic-cafe application into the IDE. In order to do that, go to File -> Import -> Maven -> Existing Maven Projects.  Click Next
