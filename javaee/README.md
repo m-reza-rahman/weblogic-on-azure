@@ -70,6 +70,7 @@ The next step is to get the application up and running. Follow the steps below t
    ```
    jdbc:postgresql://websphere-cafe-db-`<your suffix>`.postgres.database.azure.com:5432/postgres?user=postgres@websphere-cafe-db-`<your suffix>`&password=Secret123!
    ```
+   * Click 'Save' to sync with the master configuration.
    * Enter the database name to be 'postgres'. 
    * Enter the host name as 'weblogic-cafe-db-.postgres.database.azure.com'.
    * Leave the port unchanged.
