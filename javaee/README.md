@@ -57,7 +57,7 @@ The next step is to get the application up and running. Follow the steps below t
 
 ## Connect WebLogic to the PostgreSQL Server
 
-* Once WebLogic starts up, go to http://localhost:7001/console/ and log onto the console. Unless you changed them, the userid is `weblogic` and the password is `welcome1`.  
+* Once WebSphere starts up, go to https://localhost:9043/ibm/console/ and log onto the console.  
    * Click on Services -> Data Sources. Select New -> Generic Data Source. 
    * Enter the name as 'WebLogicCafeDB', JNDI name as 'jdbc/WebLogicCafeDB' and select the database type to be PostgreSQL. Click next. 
    * Accept the defaults and click next.  Do not click Finish, even though you could do so.
