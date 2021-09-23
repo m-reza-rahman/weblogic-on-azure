@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>websphere-cafe-modules</artifactId>
+		<groupId>websphere-cafe</groupId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>websphere-cafe</artifactId>
+	<packaging>ear</packaging>
+
+	<description>This is the basic Java EE application used throughout the WebSphere on Azure demos.
+        It is a simple CRUD application. It uses Maven and Java EE 7 (JAX-RS, EJB, CDI, JPA, JSF, Bean Validation).
+        </description>
+
+	<dependencies>
+		<dependency>
+			<groupId>websphere-cafe</groupId>
+			<artifactId>websphere-cafe-web</artifactId>
+			<version>0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>websphere-cafe</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<version>7</version>
+					<modules>
+						<webModule>
+							<groupId>websphere-cafe</groupId>
+							<artifactId>websphere-cafe-web</artifactId>
+							<contextRoot>/websphere-cafe</contextRoot>
+							<bundleFileName>websphere-cafe.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
