@@ -63,10 +63,15 @@ The next step is to get the application up and running. Follow the steps below t
    * Select 'Create new JDBC provider' and click next.
    * Select the database type as 'User-defined' and the implementation class as 'org.postgresql.ds.PGConnectionPoolDataSource'. Click next.
    * Enter the full path to the PostgreSQL driver (for example: /opt/IBM/WebSphere/AppServer/lib/postgresql-42.2.23.jar). Click next.
-   * Accept the defaults and click next.  Do not click Finish, even though you could do so.
-   * On the next screen select 'Logging Last Resource' and click next. 
+   * Accept the defaults and click next until you click Finish.
+   * Click 'Save' to sync with the master configuration. 
+   * Go to Resources -> JDBC -> Data sources. Click 'WebSphereCafeDB'. Click on 'Custom properties'.
+   * Change the URL to be:
+   ```
+   jdbc:postgresql://websphere-cafe-db-`<your suffix>`.postgres.database.azure.com:5432/postgres?user=postgres@websphere-cafe-db-`<your suffix>`&password=Secret123!
+   ```
    * Enter the database name to be 'postgres'. 
-   * Enter the host name as 'weblogic-cafe-db-`<your suffix>`.postgres.database.azure.com'.
+   * Enter the host name as 'weblogic-cafe-db-.postgres.database.azure.com'.
    * Leave the port unchanged.
    * Enter the user name as 'postgres@weblogic-cafe-db-`<your suffix>`'. 
    * Enter the password as 'Secret123!'. Click next. 
