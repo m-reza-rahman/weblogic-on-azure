@@ -1,5 +1,5 @@
-# Deploying a Java EE Application on Azure Using a WebLogic Virtual Machine Cluster
-This demo shows how you can deploy a Java EE application to Azure into a WebLogic cluster.
+# Deploying a Java Application on Azure Using a WebSphere Virtual Machine Cluster
+This demo shows how you can deploy a Java application to Azure into a WebSphere cluster.
 
 ## Setup
 
@@ -104,6 +104,9 @@ The next step is to get the application up and running.
    * You must see `BUILD SUCCESS` in the Eclipse console in order to proceed.  If you do not, troubleshoot the build problem and resolve it.  Once the application has successfully built, you may continue.
 
 ## Deploying the Application
+
+/datadrive/IBM/WebSphere/ND/V9/lib
+
 Ensure that the deployment action from Eclipse will target the WebLogic Cluster running on Azure.
 * Secondary click on the weblogic-cafe in the Project Explorer and choose Properties.
 * Click on "Server" in the left navigation pane.
