@@ -105,7 +105,13 @@ The next step is to get the application up and running.
 
 ## Deploying the Application
 
-/datadrive/IBM/WebSphere/ND/V9/lib
+```
+cd /datadrive/IBM/WebSphere/ND/V9/lib
+```
+
+```
+sudo wget https://github.com/m-reza-rahman/websphere-on-azure/raw/main/javaee/server/postgresql-42.2.23.jar
+```
 
 Ensure that the deployment action from Eclipse will target the WebLogic Cluster running on Azure.
 * Secondary click on the weblogic-cafe in the Project Explorer and choose Properties.
